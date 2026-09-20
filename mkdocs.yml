@@ -1,0 +1,95 @@
+site_name: Software Design and Architecture
+docs_dir: .
+site_dir: ../site
+repo_url: https://github.com/aligunesgit/software-design-and-architecture
+edit_uri: edit/main/
+copyright: Copyright &copy; 2026
+
+theme:
+  language: en
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  palette:
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.indexes
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - exclude:
+      glob:
+        - .venv/**
+        - site/**
+        - reports/README.md
+        - slides/*-lecture-script.md
+  - glightbox
+  - same-dir
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+
+nav:
+  - Home: README.md
+  - Introduction: pages/before.md
+  - 🏛️ M1 - Introduction to Software Design & Architecture: m1_introduction/README.md
+  - 🧩 M2 - Object-Oriented Design Principles: m2_oo_design_principles/README.md
+  - 🏗️ M3 - Design Patterns I (Creational & Structural): m3_design_patterns_creational_structural/README.md
+  - 🎭 M4 - Design Patterns II (Behavioral): m4_design_patterns_behavioral/README.md
+  - 📐 M5 - Architectural Styles & Patterns: m5_architectural_styles/README.md
+  - 🚀 Project Sprint A: sprint_a_project/README.md
+  - 🗺️ M6 - Domain-Driven Design & Modular Design: m6_domain_driven_design/README.md
+  - 🧱 M7 - Microservices Architecture: m7_microservices/README.md
+  - 🌐 M8 - Distributed Systems & Resilience Patterns: m8_distributed_systems/README.md
+  - 📋 M9 - Architecture Documentation & Decision Making: m9_architecture_documentation/README.md
+  - 🔍 M10 - Quality Attributes, Evaluation & Refactoring: m10_quality_evaluation/README.md
+  - 🏁 Project Sprint B: sprint_b_final_project/README.md
+  - Time plan: pages/timeplan.md
+  - Projects: pages/projects.md
+  - FAQ: pages/faq.md
+  - Summary: pages/overview.md

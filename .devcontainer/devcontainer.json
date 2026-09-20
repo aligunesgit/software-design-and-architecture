@@ -1,0 +1,5 @@
+{
+    "name": "software_design_and_architecture",
+    "dockerFile": "Dockerfile",
+    "postCreateCommand": "pip install uv && uv sync"
+}
