@@ -1,4 +1,4 @@
-# Project report — Software Design and Architecture
+# Project report: Software Design and Architecture
 
 Copy this file (and this whole `reports/` folder) into your own project repository at
 `<your-repo>/reports/README.md`, and fill it out as your project progresses. Replace each
@@ -28,13 +28,13 @@ version for quick reference while filling out the report.
 
 ## Group information
 
-### Question 1 — Group members
+### Question 1: Group members
 
 > List the group number and the student/member ID for each team member.
 
 --- answer here ---
 
-### Question 2 — Third-party frameworks
+### Question 2: Third-party frameworks
 
 > Did you use any open-source frameworks or libraries not covered in the course? Which ones, and
 > how did they help?
@@ -45,7 +45,7 @@ version for quick reference while filling out the report.
 
 ## Structure and design principles (Modules 1-2)
 
-### Question 3 — Package structure
+### Question 3: Package structure
 
 > How is your codebase organized into packages/modules? What was the reasoning behind that
 > structure?
@@ -54,7 +54,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 4 — SOLID in practice
+### Question 4: SOLID in practice
 
 > Describe one place where you deliberately applied a SOLID principle (or refactored toward one).
 > Include a short before/after comparison.
@@ -65,7 +65,7 @@ version for quick reference while filling out the report.
 
 ## Design patterns (Modules 3-4)
 
-### Question 5 — Creational or structural patterns
+### Question 5: Creational or structural patterns
 
 > Which creational or structural patterns did you use, and what problem did each one solve in
 > your system? If you considered one and decided against it, say why.
@@ -74,7 +74,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 6 — Behavioral patterns
+### Question 6: Behavioral patterns
 
 > Which behavioral patterns did you use, and what problem did each one solve?
 >
@@ -84,7 +84,7 @@ version for quick reference while filling out the report.
 
 ## Architectural style (Module 5)
 
-### Question 7 — Architectural style
+### Question 7: Architectural style
 
 > Which architectural style did you choose (layered, event-driven, microservices, or another)?
 > What quality attributes drove that choice, and what did you give up to get them?
@@ -95,7 +95,7 @@ version for quick reference while filling out the report.
 
 ## Domain-driven design (Module 6)
 
-### Question 8 — Domain model
+### Question 8: Domain model
 
 > Describe your domain model. Did you identify more than one bounded context? If yes, what is the
 > boundary between them?
@@ -106,7 +106,7 @@ version for quick reference while filling out the report.
 
 ## Microservices (Module 7)
 
-### Question 9 — Service decomposition
+### Question 9: Service decomposition
 
 > Is your system one service or several? If several, how did you decide the boundaries? If one,
 > explain why splitting it further would not have helped.
@@ -115,7 +115,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 10 — API design
+### Question 10: API design
 
 > How do your services (or your service and its clients) communicate? Describe the API contract
 > for at least one endpoint.
@@ -126,7 +126,7 @@ version for quick reference while filling out the report.
 
 ## Distributed systems and resilience (Module 8)
 
-### Question 11 — Resilience patterns
+### Question 11: Resilience patterns
 
 > Where did you apply a retry, timeout, or circuit breaker? What failure was it protecting
 > against?
@@ -135,7 +135,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 12 — Consistency trade-offs
+### Question 12: Consistency trade-offs
 
 > Did any part of your system have to choose between consistency and availability? How did you
 > resolve it?
@@ -146,14 +146,14 @@ version for quick reference while filling out the report.
 
 ## Architecture documentation (Module 9)
 
-### Question 13 — Architecture Decision Records
+### Question 13: Architecture Decision Records
 
 > Include at least one Architecture Decision Record (context, decision, consequences) for a real
 > trade-off your group made.
 
 --- answer here ---
 
-### Question 14 — Architecture diagram
+### Question 14: Architecture diagram
 
 > Include a C4-style (or equivalent) diagram of your overall system architecture and explain the
 > steps in it.
@@ -164,7 +164,7 @@ version for quick reference while filling out the report.
 
 ## Quality evaluation and refactoring (Module 10)
 
-### Question 15 — Quality attribute scenario
+### Question 15: Quality attribute scenario
 
 > State one quality attribute scenario you evaluated your design against (for example: "the
 > system should handle a 10x traffic spike without manual intervention"). What did the evaluation
@@ -174,7 +174,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 16 — Refactor driven by the evaluation
+### Question 16: Refactor driven by the evaluation
 
 > Describe a refactor you made as a direct result of that evaluation.
 >
@@ -184,7 +184,7 @@ version for quick reference while filling out the report.
 
 ## Overall discussion
 
-### Question 17 — Struggles
+### Question 17: Struggles
 
 > What were the biggest struggles in the project, and how did you address them?
 >
@@ -192,7 +192,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 18 — Contributions and AI tool usage
+### Question 18: Contributions and AI tool usage
 
 > State each team member's individual contributions. Additionally, state if/how you used
 > generative AI tools (ChatGPT, Copilot, etc.) in the project.
@@ -201,7 +201,7 @@ version for quick reference while filling out the report.
 
 --- answer here ---
 
-### Question 19 — Extras
+### Question 19: Extras
 
 > Did you implement anything not covered by the questions above? What, and why?
 >

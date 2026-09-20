@@ -114,7 +114,7 @@ software-design-course/            # call this whatever you like
 The following books are suggested reading for the course:
 
 * Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, *Design Patterns: Elements of
-  Reusable Object-Oriented Software* (Addison-Wesley) — the original "Gang of Four" book
+  Reusable Object-Oriented Software* (Addison-Wesley): the original "Gang of Four" book
 * Robert C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*
   (Prentice Hall)
 * Len Bass, Paul Clements, and Rick Kazman, *Software Architecture in Practice* (Addison-Wesley)
@@ -126,7 +126,7 @@ The following books are suggested reading for the course:
 
 Additional reading resources (in no particular order):
 
-* [Refactoring Guru — Design Patterns](https://refactoring.guru/design-patterns). A visual,
+* [Refactoring Guru: Design Patterns](https://refactoring.guru/design-patterns). A visual,
   language-agnostic introduction to the Gang of Four patterns.
 * [Martin Fowler's blog](https://martinfowler.com/). A large body of writing on software
   architecture, patterns, and refactoring, referenced throughout this course.
