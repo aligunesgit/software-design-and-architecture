@@ -12,6 +12,7 @@ repos:
         # mkdocs.yml uses !!python/name: tags (pymdownx.emoji) that only --unsafe accepts.
         args: ["--unsafe"]
       - id: check-added-large-files
+        args: ["--maxkb=10240"]
       - id: detect-private-key
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
