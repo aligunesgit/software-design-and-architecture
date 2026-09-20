@@ -1082,13 +1082,13 @@
 <li>Recognize common code smells and refactor toward a cleaner design under test</li>
 </ul>
 <hr />
-<h2 id="1-from-naming-a-quality-attribute-to-evaluating-one">1. From naming a quality attribute to evaluating one</h2>
+<h2 id="1-from-naming-a-quality-attribute-to-evaluating-one">1. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1M7 7h10V5h2v14H5V5h2zm.5 6.5L9 12l2 2 4.5-4.5L17 11l-6 6z"/></svg></span> From naming a quality attribute to evaluating one</h2>
 <p>Module 1, §1 introduced quality attributes (performance, security, maintainability, and the
 rest) as the things an architecture trades off against each other. Naming them is easy: everyone
 agrees a system should be "scalable" and "maintainable." Evaluating whether a specific design
 actually delivers on that is the harder, more useful skill, and it is what separates architecture
 as an opinion from architecture as an engineering discipline.</p>
-<h2 id="2-quality-attribute-scenarios">2. Quality attribute scenarios</h2>
+<h2 id="2-quality-attribute-scenarios">2. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 13v-2h14v2zm0 6v-2h14v2zM7 7V5h14v2zM3 8V5H2V4h2v4zm-1 9v-1h3v4H2v-1h2v-.5H3v-1h1V17zm2.25-7a.75.75 0 0 1 .75.75c0 .2-.08.39-.21.52L3.12 13H5v1H2v-.92L4 11H2v-1z"/></svg></span> Quality attribute scenarios</h2>
 <p>A quality attribute is not evaluable until it is written as a <strong>scenario</strong> with four parts:
 stimulus, environment, response, and response measure.</p>
 <table>
@@ -1126,7 +1126,7 @@ stimulus, environment, response, and response measure.</p>
 </ul>
 <p>The second version is something you can actually test, and something a design review can say yes
 or no to, rather than nod along with.</p>
-<h2 id="3-sensitivity-points-and-trade-off-points">3. Sensitivity points and trade-off points</h2>
+<h2 id="3-sensitivity-points-and-trade-off-points">3. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"/></svg></span> Sensitivity points and trade-off points</h2>
 <p>Two ideas from the <strong>Architecture Tradeoff Analysis Method (ATAM)</strong> help you locate where a
 design decision matters most. A <strong>sensitivity point</strong> is a place where one architectural decision
 significantly affects a quality attribute: choosing synchronous versus asynchronous
@@ -1142,7 +1142,7 @@ reason about and keeps order and payment state consistent, but it means a slow o
 service directly threatens the 500ms response measure above. That single observation, made
 explicit rather than left implicit, is the entire value ATAM adds: it does not choose the trade-off
 for you, it makes sure the trade-off is a decision instead of an accident.</p>
-<h2 id="4-code-level-quality-metrics">4. Code-level quality metrics</h2>
+<h2 id="4-code-level-quality-metrics">4. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span> Code-level quality metrics</h2>
 <p>Architecture-level evaluation is qualitative; code-level evaluation can be measured directly.
 <strong>Cyclomatic complexity</strong> counts the number of independent paths through a function (each <code>if</code>,
 <code>for</code>, <code>while</code>, or <code>and</code>/<code>or</code> adds one); a function above roughly 10 is a candidate for splitting.
@@ -1161,7 +1161,7 @@ prevent.</p>
 at 14 is well past the point where splitting it into smaller functions, or applying one of the
 behavioral patterns from Module 4 (a Strategy for the different validation rules it likely
 branches on), would make it independently testable and easier to reason about.</p>
-<h2 id="5-code-smells-and-safe-refactoring">5. Code smells and safe refactoring</h2>
+<h2 id="5-code-smells-and-safe-refactoring">5. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19.36 2.72 1.42 1.42-5.72 5.71c1.07 1.54 1.22 3.39.32 4.59L9.06 8.12c1.2-.9 3.05-.75 4.59.32zM5.93 17.57c-2.01-2.01-3.24-4.41-3.58-6.65l4.88-2.09 7.44 7.44-2.09 4.88c-2.24-.34-4.64-1.57-6.65-3.58"/></svg></span> Code smells and safe refactoring</h2>
 <p>A <strong>code smell</strong> is a surface symptom that usually points at a deeper design problem underneath.
 Four common ones:</p>
 <table>
@@ -1254,7 +1254,7 @@ design, is exactly what the final report in Sprint B asks you to have already do
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 18:59:24">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 19:09:13">September 20, 2026</span>
   </span>
 
     

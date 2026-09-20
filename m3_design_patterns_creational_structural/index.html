@@ -1262,7 +1262,7 @@
   the first one that comes to mind</li>
 </ul>
 <hr />
-<h2 id="1-what-a-design-pattern-is-and-what-it-is-not">1. What a design pattern is, and what it is not</h2>
+<h2 id="1-what-a-design-pattern-is-and-what-it-is-not">1. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 13.5c0 1.76-1.3 3.22-3 3.46V20a2 2 0 0 1-2 2h-3.8v-.3a2.7 2.7 0 0 0-2.7-2.7c-1.5 0-2.7 1.21-2.7 2.7v.3H4a2 2 0 0 1-2-2v-3.8h.3C3.79 16.2 5 15 5 13.5s-1.21-2.7-2.7-2.7H2V7a2 2 0 0 1 2-2h3.04c.24-1.7 1.7-3 3.46-3s3.22 1.3 3.46 3H17a2 2 0 0 1 2 2v3.04c1.7.24 3 1.7 3 3.46M17 15h1.5a1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5H17V7h-5V5.5A1.5 1.5 0 0 0 10.5 4 1.5 1.5 0 0 0 9 5.5V7H4v2.12c1.76.68 3 2.38 3 4.38s-1.25 3.7-3 4.38V20h2.12a4.7 4.7 0 0 1 4.38-3c2 0 3.7 1.25 4.38 3H17z"/></svg></span> What a design pattern is, and what it is not</h2>
 <p>A <strong>design pattern</strong> is a named, reusable solution to a design problem that recurs across many
 codebases: not a finished piece of code you copy in, but a shape of solution you adapt to your own
 classes and constraints. The value of a pattern is mostly the <em>name</em>: once a team agrees "this is a
@@ -1273,7 +1273,13 @@ around global state because "it might need to be swapped out one day," adds a la
 that has to be understood and maintained forever, for a flexibility nobody ends up using. Pattern
 overuse is a real code smell, sometimes called "pattern-itis," and this module tries to name the
 cost of each pattern alongside its benefit, not just the benefit.</p>
-<h2 id="2-creational-patterns">2. Creational patterns</h2>
+<figure>
+<p><a class="glightbox" href="https://imgs.xkcd.com/comics/standards.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="xkcd: Standards" src="https://imgs.xkcd.com/comics/standards.png" /></a></p>
+<figcaption><a href="https://xkcd.com/927/">xkcd #927</a>, CC BY-NC 2.5. The same joke applies to
+patterns: reaching for a new one to "solve" the mess left by the last three usually adds a
+fourteenth.</figcaption>
+</figure>
+<h2 id="2-creational-patterns">2. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 18v2h4v-2zm0-4v2h10v-2zm6 4v2h4v-2zm6-4v2h4v-2zm0 4v2h4v-2zM2 22V8l5 4V8l5 4V8l5 4 1-10h3l1 10v10z"/></svg></span> Creational patterns</h2>
 <p>Creational patterns are about <em>how an object gets constructed</em>, separating the calling code from
 the concrete class being instantiated.</p>
 <h3 id="21-factory-method">2.1 Factory Method</h3>
@@ -1458,7 +1464,7 @@ visible. Before reaching for Singleton, check whether passing the shared object 
 constructor or function argument) solves the same problem without the global state; it almost
 always does, and Module 2's dependency inversion principle (Module 2, §5) is exactly the tool for
 making that dependency explicit instead of hidden.</p>
-<h2 id="3-structural-patterns">3. Structural patterns</h2>
+<h2 id="3-structural-patterns">3. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 11h8V3H3m2 2h4v4H5m8 12h8v-8h-8m2 2h4v4h-4M3 21h8v-8H3m2 2h4v4H5m8-16v8h8V3m-2 6h-4V5h4Z"/></svg></span> Structural patterns</h2>
 <p>Structural patterns are about <em>how objects and classes are composed</em> into larger structures,
 without changing what those objects actually do.</p>
 <h3 id="31-adapter">3.1 Adapter</h3>
@@ -1616,7 +1622,7 @@ chart) and you want to treat a single leaf and a whole subtree through the same 
 </span></code></pre></div>
 <p>Calling code just calls <code>.size()</code>; whether that's a single file or a folder containing thousands of
 files is invisible to it.</p>
-<h2 id="4-matching-a-problem-to-a-pattern">4. Matching a problem to a pattern</h2>
+<h2 id="4-matching-a-problem-to-a-pattern">4. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07V2m-2 4.08V8h2V6.09c2.5.41 4.5 2.41 4.92 4.91H16v2h1.91c-.41 2.5-2.41 4.5-4.91 4.92V16h-2v1.91C8.5 17.5 6.5 15.5 6.08 13H8v-2H6.09C6.5 8.5 8.5 6.5 11 6.08M12 11a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> Matching a problem to a pattern</h2>
 <table>
 <thead>
 <tr>
@@ -1714,7 +1720,7 @@ at runtime," with the behavioral patterns.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 18:59:24">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 19:09:13">September 20, 2026</span>
   </span>
 
     

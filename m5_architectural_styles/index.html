@@ -1147,7 +1147,7 @@
 <li>Choose an architectural style for a real system and justify the choice in writing</li>
 </ul>
 <hr />
-<h2 id="1-why-architectural-style-is-a-first-decision-not-a-detail">1. Why architectural style is a first decision, not a detail</h2>
+<h2 id="1-why-architectural-style-is-a-first-decision-not-a-detail">1. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m7 17 3.2-6.8L17 7l-3.2 6.8zm5-5.9a.9.9 0 0 0-.9.9.9.9 0 0 0 .9.9.9.9 0 0 0 .9-.9.9.9 0 0 0-.9-.9M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8"/></svg></span> Why architectural style is a first decision, not a detail</h2>
 <p>An architectural style is a reusable, named solution to the problem of how a system's components
 are decomposed and how they communicate. Choosing one is one of the most expensive decisions a
 team makes, because it is exactly the kind of decision Module 1 called architectural rather than
@@ -1157,7 +1157,7 @@ to every other component, not editing one class.</p>
 matter most for a given system, made at the cost of the quality attributes it does not favor. The
 skill this module builds is matching a style to a system's actual constraints, not memorizing which
 style is fashionable.</p>
-<h2 id="2-layered-architecture">2. Layered architecture</h2>
+<h2 id="2-layered-architecture">2. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 18.54 7.37-5.74L21 14.07l-9 7-9-7 1.62-1.26zM12 16 3 9l9-7 9 7zm0-11.47L6.26 9 12 13.47 17.74 9z"/></svg></span> Layered architecture</h2>
 <p>A layered architecture stacks components into horizontal layers, where each layer only calls the
 layer directly below it (a presentation layer calls a business logic layer, which calls a data
 access layer, and so on).</p>
@@ -1171,7 +1171,7 @@ data access layer, and <strong>testability</strong>, since each layer can be tes
 below it. It costs <strong>performance</strong>, since every request pays the cost of passing through every
 layer even when a shortcut would be faster, and it can quietly turn into a "distributed monolith"
 if teams start bypassing layers under deadline pressure.</p>
-<h2 id="3-client-server">3. Client-Server</h2>
+<h2 id="3-client-server">3. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-7zM4 3h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m5 4h1V5H9zm0 8h1v-2H9zM5 5v2h2V5zm0 8v2h2v-2z"/></svg></span> Client-Server</h2>
 <p>A client-server architecture splits a system into a server that provides a service and one or more
 clients that consume it over a network, with the server owning the shared state.</p>
 <pre class="mermaid"><code>flowchart LR
@@ -1183,7 +1183,7 @@ clients can be added without changing the server, and <strong>security</strong>,
 a server you control rather than on every client device. It costs <strong>availability</strong> from the
 client's point of view: if the server is down, every client is down with it, unless the team
 invests separately in server redundancy.</p>
-<h2 id="4-pipe-and-filter">4. Pipe-and-Filter</h2>
+<h2 id="4-pipe-and-filter">4. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-2v2h-6v-3h2v-2h-2V6a2 2 0 0 0-2-2H4V2H2v8h2V8h6v3H8v2h2v5a2 2 0 0 0 2 2h8v2h2"/></svg></span> Pipe-and-Filter</h2>
 <p>A pipe-and-filter architecture processes data through a sequence of independent filters, each one
 transforming its input and passing the result to the next filter through a pipe.</p>
 <pre class="mermaid"><code>flowchart LR
@@ -1198,7 +1198,7 @@ filter with no knowledge of its neighbors can be reused in a different pipeline,
 <strong>performance</strong> on interactive systems, since data typically flows through the whole pipeline even
 when only one filter's output is needed, and it is a poor fit when filters need to share state or
 run in a specific non-linear order.</p>
-<h2 id="5-event-driven-architecture">5. Event-Driven architecture</h2>
+<h2 id="5-event-driven-architecture">5. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg></span> Event-Driven architecture</h2>
 <p>An event-driven architecture decouples components so that producers publish events without knowing
 who, if anyone, is listening, and consumers subscribe to the events they care about.</p>
 <pre class="mermaid"><code>flowchart LR
@@ -1213,7 +1213,7 @@ typical case. It favors <strong>modifiability</strong> (add a new consumer witho
 what happened for one event across every consumer that reacted to it is genuinely harder than
 following a single call stack, and eventual consistency between consumers becomes a real design
 concern rather than a footnote.</p>
-<h2 id="6-mvc-model-view-controller">6. MVC (Model-View-Controller)</h2>
+<h2 id="6-mvc-model-view-controller">6. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 5v2h-4V5zM9 5v6H5V5zm10 8v6h-4v-6zM9 17v2H5v-2zM21 3h-8v6h8zM11 3H3v10h8zm10 8h-8v10h8zm-10 4H3v6h8z"/></svg></span> MVC (Model-View-Controller)</h2>
 <p>MVC splits an application into a Model (the data and business rules), a View (the presentation of
 that data), and a Controller (which translates user input into changes to the model and choices
 about which view to render).</p>
@@ -1227,7 +1227,7 @@ about which view to render).</p>
 duplicating business logic, and it makes UI and business-logic changes largely independent of each
 other. It costs some <strong>simplicity</strong> for small applications, where the ceremony of three separate
 components for what is really one small feature can be more overhead than it is worth.</p>
-<h2 id="7-microkernel-plugin-architecture">7. Microkernel / Plugin architecture</h2>
+<h2 id="7-microkernel-plugin-architecture">7. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 7V3h-2v4h-4V3H8v4C7 7 6 8 6 9v5.5L9.5 18v3h5v-3l3.5-3.5V9c0-1-1-2-2-2m0 6.67-2.91 2.92-.42.41h-1.34l-.41-.41L8 13.67V9.09c0-.03.06-.09.09-.09h7.83c.03 0 .08.06.08.09z"/></svg></span> Microkernel / Plugin architecture</h2>
 <p>A microkernel architecture keeps a minimal core system and pushes everything else into plugins that
 the core loads and calls through a stable interface, without the core needing to know what any
 specific plugin does.</p>
@@ -1241,7 +1241,7 @@ favors <strong>extensibility</strong>, since third parties can add capability wi
 <strong>modifiability</strong> of the core itself, which stays small and rarely needs to change. It costs
 <strong>performance and reliability guarantees</strong>: a misbehaving plugin can degrade or crash the whole
 system unless the core invests in isolating plugin failures.</p>
-<h2 id="8-comparing-the-styles">8. Comparing the styles</h2>
+<h2 id="8-comparing-the-styles">8. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"/></svg></span> Comparing the styles</h2>
 <table>
 <thead>
 <tr>
@@ -1338,7 +1338,7 @@ actually needs most, and picking the style that buys it most cheaply.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 18:59:24">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 19:09:13">September 20, 2026</span>
   </span>
 
     

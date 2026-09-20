@@ -1125,7 +1125,7 @@
 <li>Carve a real domain into at least two bounded contexts and justify the boundary</li>
 </ul>
 <hr />
-<h2 id="1-why-domain-driven-design">1. Why domain-driven design</h2>
+<h2 id="1-why-domain-driven-design">1. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12zM12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm-3-3h2v-2.13c1.73-.44 3-2.01 3-3.87a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1.86 1.27 3.43 3 3.87z"/></svg></span> Why domain-driven design</h2>
 <p>Domain-driven design (DDD) is a set of practices for structuring software around the business
 domain it serves, rather than around technical layers alone. The core claim is simple: a codebase
 that mirrors how domain experts actually talk about the problem is easier to change correctly than
@@ -1133,14 +1133,14 @@ one that mirrors only the database schema or the framework's folder conventions.
 you the vocabulary and the modeling tools; Module 7 (Microservices) picks this up directly, since
 bounded contexts are the most common basis for deciding where a system's service boundaries
 actually go.</p>
-<h2 id="2-ubiquitous-language">2. Ubiquitous language</h2>
+<h2 id="2-ubiquitous-language">2. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg></span> Ubiquitous language</h2>
 <p>The <strong>ubiquitous language</strong> is the shared vocabulary between developers and domain experts, used
 consistently in conversation, documentation, and code. If a domain expert says "reservation" and
 the code says <code>Booking</code>, that gap is not cosmetic: it is a translation cost paid every single time
 someone needs to connect a bug report to the class that causes it. The practical habit this module
 asks you to build is renaming code to match the domain expert's own words, not the other way
 around.</p>
-<h2 id="3-entities-vs-value-objects">3. Entities vs. value objects</h2>
+<h2 id="3-entities-vs-value-objects">3. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg></span> Entities vs. value objects</h2>
 <p>An <strong>entity</strong> has a persistent identity that outlives changes to its attributes: a <code>Customer</code>
 is still the same customer after changing their address. A <strong>value object</strong> has no identity of its
 own; it is defined entirely by its attributes, and two value objects with the same attributes are
@@ -1162,7 +1162,7 @@ representing 50 EUR, and neither needs to be tracked as "the same instance" over
 <p>Getting this distinction right early avoids a specific class of bug: treating a value object as if
 it needed identity tracking adds pointless bookkeeping, and treating an entity as if it were a
 value object loses the ability to answer "is this the same customer as before."</p>
-<h2 id="4-aggregates-and-consistency-boundaries">4. Aggregates and consistency boundaries</h2>
+<h2 id="4-aggregates-and-consistency-boundaries">4. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V5l9-4 9 4zm-9 10c3.75-1 7-5.46 7-9.78V6.3l-7-3.12L5 6.3v4.92C5 15.54 8.25 20 12 21m-2-4-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9"/></svg></span> Aggregates and consistency boundaries</h2>
 <p>An <strong>aggregate</strong> is a cluster of entities and value objects treated as one consistency unit,
 accessed and modified only through a single entry point called the <strong>aggregate root</strong>. An <code>Order</code>
 aggregate might contain <code>OrderLine</code> entities and a <code>Money</code> total; nothing outside the aggregate is
@@ -1172,7 +1172,7 @@ elsewhere in the system.</p>
 <p>The practical rule of thumb: an aggregate boundary should be exactly as large as it needs to be to
 enforce one consistency rule, and no larger. Aggregates that grow too large become a concurrency
 bottleneck, since every change to any part of the aggregate typically has to lock the whole thing.</p>
-<h2 id="5-bounded-contexts">5. Bounded contexts</h2>
+<h2 id="5-bounded-contexts">5. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 2h6v2h8V2h6v6h-2v8h2v6h-6v-2H8v2H2v-6h2V8H2zm14 6V6H8v2H6v8h2v2h8v-2h2V8zM4 4v2h2V4zm14 0v2h2V4zM4 18v2h2v-2zm14 0v2h2v-2z"/></svg></span> Bounded contexts</h2>
 <p>A <strong>bounded context</strong> is a boundary within which a specific model and its ubiquitous language
 apply consistently. The same word can mean genuinely different things in different bounded
 contexts: "Product" in a Catalog context means something with a description, images, and a price;
@@ -1180,7 +1180,7 @@ contexts: "Product" in a Catalog context means something with a description, ima
 Trying to force one shared <code>Product</code> class to serve both contexts is exactly the mistake bounded
 contexts exist to prevent: it is Module 2's low-cohesion problem, at the scale of an entire
 subsystem instead of one class.</p>
-<h2 id="6-context-mapping">6. Context mapping</h2>
+<h2 id="6-context-mapping">6. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6h-2v-3c0-1.11-.89-2-2-2h-6V8h2V2z"/></svg></span> Context mapping</h2>
 <p>When two bounded contexts need to interact, the relationship between them needs to be named
 explicitly, since each pattern implies a different amount of coupling:</p>
 <table>
@@ -1207,7 +1207,7 @@ explicitly, since each pattern implies a different amount of coupling:</p>
 </table>
 <p>An Anticorruption Layer is the pattern worth remembering first, since it is the direct answer to
 "we have to integrate with a messy legacy system, but we don't want its model polluting ours."</p>
-<h2 id="7-a-worked-example-bounded-contexts-in-an-e-commerce-system">7. A worked example: bounded contexts in an e-commerce system</h2>
+<h2 id="7-a-worked-example-bounded-contexts-in-an-e-commerce-system">7. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7 2.78-5H6.14l2.36 5z"/></svg></span> A worked example: bounded contexts in an e-commerce system</h2>
 <pre class="mermaid"><code>flowchart LR
     subgraph Catalog["Catalog context"]
         CP["Product&lt;br/&gt;(description, price, images)"]
@@ -1275,7 +1275,7 @@ service?</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 18:59:24">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 19:09:13">September 20, 2026</span>
   </span>
 
     

@@ -1149,7 +1149,7 @@
 <li>Match a concrete design problem to the behavioral pattern that fits it</li>
 </ul>
 <hr />
-<h2 id="1-what-behavioral-patterns-are-for">1. What behavioral patterns are for</h2>
+<h2 id="1-what-behavioral-patterns-are-for">1. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 9c6 0 6 4 6 4v2h-6v-2s0-1.69-1.15-3.2c-.17-.23-.38-.45-.6-.66C14.77 9.06 15.34 9 16 9M2 13s0-4 6-4 6 4 6 4v2H2zm7 4v2h6v-2l3 3-3 3v-2H9v2l-3-3zM8 1C6.34 1 5 2.34 5 4s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3m8 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg></span> What behavioral patterns are for</h2>
 <p>Module 3's creational patterns answered "how does an object get built" and its structural
 patterns answered "how do objects fit together" (Module 3, §2-§3). Behavioral patterns answer a
 third, different question: <strong>how do objects collaborate, and how does an object's behavior change
@@ -1158,7 +1158,7 @@ object <em>is composed of</em>, a behavioral pattern like Strategy or State chan
 when the same method is called again under different conditions. The same caution from Module 3,
 §1 applies here too: a pattern is worth its indirection only when the flexibility it buys is
 flexibility you actually need.</p>
-<h2 id="2-strategy">2. Strategy</h2>
+<h2 id="2-strategy">2. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21 9-4-4v3h-7v2h7v3M7 11l-4 4 4 4v-3h7v-2H7z"/></svg></span> Strategy</h2>
 <p><strong>Reach for this when:</strong> you have several interchangeable algorithms for the same job, and the
 choice of algorithm should be swappable independently of the code that uses it.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1196,7 +1196,7 @@ choice of algorithm should be swappable independently of the code that uses it.<
 </span></code></pre></div>
 <p><code>Order</code> never has an <code>if discount_type == "percentage"</code> chain; swapping in a new discount rule
 means writing a new <code>DiscountStrategy</code>, not editing <code>Order</code>.</p>
-<h2 id="3-observer">3. Observer</h2>
+<h2 id="3-observer">3. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg></span> Observer</h2>
 <p><strong>Reach for this when:</strong> one object's state change needs to notify an open-ended, possibly
 changing set of other objects, without that object needing to know who they are.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1241,7 +1241,7 @@ changing set of other objects, without that object needing to know who they are.
     EmailSubscriber--&gt;&gt;EmailSubscriber: print notification</code></pre>
 <p><code>Stock</code> depends only on the <code>Subscriber</code> interface; it can gain or lose subscribers at runtime
 without any change to its own code.</p>
-<h2 id="4-command">4. Command</h2>
+<h2 id="4-command">4. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-2 14.5 6-4.5-6-4.5z"/></svg></span> Command</h2>
 <p><strong>Reach for this when:</strong> you need to represent "an action to perform" as an object itself, so it
 can be queued, logged, undone, or handed to code that has no idea what the action actually does.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1295,7 +1295,7 @@ can be queued, logged, undone, or handed to code that has no idea what the actio
 <p><code>CommandHistory</code> never needs to know what a command actually does; it only ever calls <code>execute()</code>
 and <code>undo()</code>, which is exactly what makes undo/redo, a job queue, or an audit log possible without
 touching <code>Document</code> at all.</p>
-<h2 id="5-template-method">5. Template Method</h2>
+<h2 id="5-template-method">5. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1M7 7h10V5h2v14H5V5h2zm5 10v-2h5v2zm0-6V9h5v2zm-4 1V9H7V8h2v4zm1.25 2c.41 0 .75.34.75.75 0 .2-.08.39-.21.52L8.12 17H10v1H7v-.92L9 15H7v-1z"/></svg></span> Template Method</h2>
 <p><strong>Reach for this when:</strong> several algorithms share the same overall skeleton, but a few steps
 inside that skeleton differ between them.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1333,7 +1333,7 @@ inside that skeleton differ between them.</p>
 differ per format (<code>read_source</code>, <code>parse</code>) are. This is the inverse of Strategy: Template Method
 fixes the skeleton and varies the steps inside a subclass, while Strategy swaps the whole algorithm
 in from outside.</p>
-<h2 id="6-state">6. State</h2>
+<h2 id="6-state">6. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.27 17.05A2.991 2.991 0 0 1 4 22c-1.66 0-3-1.34-3-3s1.34-3 3-3c.18 0 .36 0 .53.05l3.07-5.36-1.74-.99 4.09-1.12 1.12 4.09-1.74-.99zM20 16c-1.3 0-2.4.84-2.82 2H11v-2l-3 3 3 3v-2h6.18c.42 1.16 1.52 2 2.82 2 1.66 0 3-1.34 3-3s-1.34-3-3-3m-8-8c.18 0 .36 0 .53-.05l3.07 5.36-1.74.99 4.09 1.12 1.12-4.09-1.74.99-3.06-5.37A2.991 2.991 0 0 0 12 2c-1.66 0-3 1.34-3 3s1.34 3 3 3"/></svg></span> State</h2>
 <p><strong>Reach for this when:</strong> an object's behavior should change based on its internal state, and an
 <code>if self.state == "..."</code> chain scattered across every method is becoming the actual source of
 bugs.</p>
@@ -1376,7 +1376,7 @@ bugs.</p>
     Delivered --&gt; Delivered : advance()</code></pre>
 <p>Each state class owns its own transition logic; adding a new state (say, <code>Cancelled</code>) means adding
 one new class, not finding and editing every method that currently checks <code>self.state</code>.</p>
-<h2 id="7-chain-of-responsibility-briefly">7. Chain of Responsibility, briefly</h2>
+<h2 id="7-chain-of-responsibility-briefly">7. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24 2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24 2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24.973.973 0 0 1 0-1.42"/></svg></span> Chain of Responsibility, briefly</h2>
 <p><strong>Reach for this when:</strong> a request should pass through a sequence of possible handlers, and each
 handler independently decides whether to handle it, pass it on, or both.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1414,7 +1414,7 @@ handler independently decides whether to handle it, pass it on, or both.</p>
 </span></code></pre></div>
 <p>This is the shape behind most HTTP middleware stacks: each handler is independently testable, and
 the chain's order can be reconfigured without touching any individual handler's code.</p>
-<h2 id="8-matching-a-problem-to-a-pattern">8. Matching a problem to a pattern</h2>
+<h2 id="8-matching-a-problem-to-a-pattern">8. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07V2m-2 4.08V8h2V6.09c2.5.41 4.5 2.41 4.92 4.91H16v2h1.91c-.41 2.5-2.41 4.5-4.91 4.92V16h-2v1.91C8.5 17.5 6.5 15.5 6.08 13H8v-2H6.09C6.5 8.5 8.5 6.5 11 6.08M12 11a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg></span> Matching a problem to a pattern</h2>
 <table>
 <thead>
 <tr>
@@ -1505,7 +1505,7 @@ Responsibility both replace scattered conditional logic with a set of small, foc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 18:59:24">September 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 19:09:13">September 20, 2026</span>
   </span>
 
     
