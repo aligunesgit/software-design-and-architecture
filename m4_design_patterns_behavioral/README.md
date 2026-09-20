@@ -12,7 +12,7 @@ Week 4
 
 ---
 
-## 1. What behavioral patterns are for
+## 1. :material-account-switch: What behavioral patterns are for
 
 Module 3's creational patterns answered "how does an object get built" and its structural
 patterns answered "how do objects fit together" (Module 3, §2-§3). Behavioral patterns answer a
@@ -23,7 +23,7 @@ when the same method is called again under different conditions. The same cautio
 §1 applies here too: a pattern is worth its indirection only when the flexibility it buys is
 flexibility you actually need.
 
-## 2. Strategy
+## 2. :material-swap-horizontal: Strategy
 
 **Reach for this when:** you have several interchangeable algorithms for the same job, and the
 choice of algorithm should be swappable independently of the code that uses it.
@@ -66,7 +66,7 @@ print(order.total())  # 80.0
 `Order` never has an `if discount_type == "percentage"` chain; swapping in a new discount rule
 means writing a new `DiscountStrategy`, not editing `Order`.
 
-## 3. Observer
+## 3. :material-eye-outline: Observer
 
 **Reach for this when:** one object's state change needs to notify an open-ended, possibly
 changing set of other objects, without that object needing to know who they are.
@@ -119,7 +119,7 @@ sequenceDiagram
 `Stock` depends only on the `Subscriber` interface; it can gain or lose subscribers at runtime
 without any change to its own code.
 
-## 4. Command
+## 4. :material-play-circle-outline: Command
 
 **Reach for this when:** you need to represent "an action to perform" as an object itself, so it
 can be queued, logged, undone, or handed to code that has no idea what the action actually does.
@@ -178,7 +178,7 @@ print(doc.text)  # "Hello"
 and `undo()`, which is exactly what makes undo/redo, a job queue, or an audit log possible without
 touching `Document` at all.
 
-## 5. Template Method
+## 5. :material-clipboard-list-outline: Template Method
 
 **Reach for this when:** several algorithms share the same overall skeleton, but a few steps
 inside that skeleton differ between them.
@@ -221,7 +221,7 @@ differ per format (`read_source`, `parse`) are. This is the inverse of Strategy:
 fixes the skeleton and varies the steps inside a subclass, while Strategy swaps the whole algorithm
 in from outside.
 
-## 6. State
+## 6. :material-state-machine: State
 
 **Reach for this when:** an object's behavior should change based on its internal state, and an
 `if self.state == "..."` chain scattered across every method is becoming the actual source of
@@ -272,7 +272,7 @@ stateDiagram-v2
 Each state class owns its own transition logic; adding a new state (say, `Cancelled`) means adding
 one new class, not finding and editing every method that currently checks `self.state`.
 
-## 7. Chain of Responsibility, briefly
+## 7. :material-link-variant: Chain of Responsibility, briefly
 
 **Reach for this when:** a request should pass through a sequence of possible handlers, and each
 handler independently decides whether to handle it, pass it on, or both.
@@ -315,7 +315,7 @@ print(auth.handle("ok"))  # None, ok passes through the whole chain
 This is the shape behind most HTTP middleware stacks: each handler is independently testable, and
 the chain's order can be reconfigured without touching any individual handler's code.
 
-## 8. Matching a problem to a pattern
+## 8. :material-target: Matching a problem to a pattern
 
 | If your problem is... | Reach for... |
 |---|---|

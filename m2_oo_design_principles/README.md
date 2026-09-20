@@ -10,7 +10,7 @@ Week 2
 
 ---
 
-## 1. Coupling and cohesion
+## 1. :material-link-variant: Coupling and cohesion
 
 **Coupling** is how much one part of a codebase depends on the internal details of another.
 **Cohesion** is how tightly the responsibilities inside one part actually belong together. The
@@ -24,7 +24,7 @@ in each piece and lets a caller depend on only the one it actually needs.
 
 Every principle in §2 is, underneath, a specific technique for improving one or both of these.
 
-## 2. The five SOLID principles
+## 2. :material-format-list-checks: The five SOLID principles
 
 ### Single Responsibility Principle (SRP)
 

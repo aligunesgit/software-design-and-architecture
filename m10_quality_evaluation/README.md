@@ -11,7 +11,7 @@ Week 11
 
 ---
 
-## 1. From naming a quality attribute to evaluating one
+## 1. :material-clipboard-check-outline: From naming a quality attribute to evaluating one
 
 Module 1, §1 introduced quality attributes (performance, security, maintainability, and the
 rest) as the things an architecture trades off against each other. Naming them is easy: everyone
@@ -19,7 +19,7 @@ agrees a system should be "scalable" and "maintainable." Evaluating whether a sp
 actually delivers on that is the harder, more useful skill, and it is what separates architecture
 as an opinion from architecture as an engineering discipline.
 
-## 2. Quality attribute scenarios
+## 2. :material-format-list-numbered: Quality attribute scenarios
 
 A quality attribute is not evaluable until it is written as a **scenario** with four parts:
 stimulus, environment, response, and response measure.
@@ -41,7 +41,7 @@ Compare a vague goal against a real scenario:
 The second version is something you can actually test, and something a design review can say yes
 or no to, rather than nod along with.
 
-## 3. Sensitivity points and trade-off points
+## 3. :material-scale-balance: Sensitivity points and trade-off points
 
 Two ideas from the **Architecture Tradeoff Analysis Method (ATAM)** help you locate where a
 design decision matters most. A **sensitivity point** is a place where one architectural decision
@@ -60,7 +60,7 @@ service directly threatens the 500ms response measure above. That single observa
 explicit rather than left implicit, is the entire value ATAM adds: it does not choose the trade-off
 for you, it makes sure the trade-off is a decision instead of an accident.
 
-## 4. Code-level quality metrics
+## 4. :material-chart-line: Code-level quality metrics
 
 Architecture-level evaluation is qualitative; code-level evaluation can be measured directly.
 **Cyclomatic complexity** counts the number of independent paths through a function (each `if`,
@@ -87,7 +87,7 @@ at 14 is well past the point where splitting it into smaller functions, or apply
 behavioral patterns from Module 4 (a Strategy for the different validation rules it likely
 branches on), would make it independently testable and easier to reason about.
 
-## 5. Code smells and safe refactoring
+## 5. :material-broom: Code smells and safe refactoring
 
 A **code smell** is a surface symptom that usually points at a deeper design problem underneath.
 Four common ones:

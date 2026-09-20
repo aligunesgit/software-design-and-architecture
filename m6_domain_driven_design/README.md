@@ -10,7 +10,7 @@ Week 7
 
 ---
 
-## 1. Why domain-driven design
+## 1. :material-lightbulb-on-outline: Why domain-driven design
 
 Domain-driven design (DDD) is a set of practices for structuring software around the business
 domain it serves, rather than around technical layers alone. The core claim is simple: a codebase
@@ -20,7 +20,7 @@ you the vocabulary and the modeling tools; Module 7 (Microservices) picks this u
 bounded contexts are the most common basis for deciding where a system's service boundaries
 actually go.
 
-## 2. Ubiquitous language
+## 2. :material-translate: Ubiquitous language
 
 The **ubiquitous language** is the shared vocabulary between developers and domain experts, used
 consistently in conversation, documentation, and code. If a domain expert says "reservation" and
@@ -29,7 +29,7 @@ someone needs to connect a bug report to the class that causes it. The practical
 asks you to build is renaming code to match the domain expert's own words, not the other way
 around.
 
-## 3. Entities vs. value objects
+## 3. :material-cube-outline: Entities vs. value objects
 
 An **entity** has a persistent identity that outlives changes to its attributes: a `Customer`
 is still the same customer after changing their address. A **value object** has no identity of its
@@ -56,7 +56,7 @@ Getting this distinction right early avoids a specific class of bug: treating a 
 it needed identity tracking adds pointless bookkeeping, and treating an entity as if it were a
 value object loses the ability to answer "is this the same customer as before."
 
-## 4. Aggregates and consistency boundaries
+## 4. :material-shield-check-outline: Aggregates and consistency boundaries
 
 An **aggregate** is a cluster of entities and value objects treated as one consistency unit,
 accessed and modified only through a single entry point called the **aggregate root**. An `Order`
@@ -69,7 +69,7 @@ The practical rule of thumb: an aggregate boundary should be exactly as large as
 enforce one consistency rule, and no larger. Aggregates that grow too large become a concurrency
 bottleneck, since every change to any part of the aggregate typically has to lock the whole thing.
 
-## 5. Bounded contexts
+## 5. :material-vector-square: Bounded contexts
 
 A **bounded context** is a boundary within which a specific model and its ubiquitous language
 apply consistently. The same word can mean genuinely different things in different bounded
@@ -79,7 +79,7 @@ Trying to force one shared `Product` class to serve both contexts is exactly the
 contexts exist to prevent: it is Module 2's low-cohesion problem, at the scale of an entire
 subsystem instead of one class.
 
-## 6. Context mapping
+## 6. :material-sitemap: Context mapping
 
 When two bounded contexts need to interact, the relationship between them needs to be named
 explicitly, since each pattern implies a different amount of coupling:
@@ -93,7 +93,7 @@ explicitly, since each pattern implies a different amount of coupling:
 An Anticorruption Layer is the pattern worth remembering first, since it is the direct answer to
 "we have to integrate with a messy legacy system, but we don't want its model polluting ours."
 
-## 7. A worked example: bounded contexts in an e-commerce system
+## 7. :material-cart-outline: A worked example: bounded contexts in an e-commerce system
 
 ```mermaid
 flowchart LR

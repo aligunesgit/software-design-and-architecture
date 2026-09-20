@@ -13,7 +13,7 @@ Week 3
 
 ---
 
-## 1. What a design pattern is, and what it is not
+## 1. :material-puzzle-outline: What a design pattern is, and what it is not
 
 A **design pattern** is a named, reusable solution to a design problem that recurs across many
 codebases: not a finished piece of code you copy in, but a shape of solution you adapt to your own
@@ -27,7 +27,14 @@ that has to be understood and maintained forever, for a flexibility nobody ends 
 overuse is a real code smell, sometimes called "pattern-itis," and this module tries to name the
 cost of each pattern alongside its benefit, not just the benefit.
 
-## 2. Creational patterns
+<figure markdown>
+![xkcd: Standards](https://imgs.xkcd.com/comics/standards.png)
+<figcaption><a href="https://xkcd.com/927/">xkcd #927</a>, CC BY-NC 2.5. The same joke applies to
+patterns: reaching for a new one to "solve" the mess left by the last three usually adds a
+fourteenth.</figcaption>
+</figure>
+
+## 2. :material-factory: Creational patterns
 
 Creational patterns are about *how an object gets constructed*, separating the calling code from
 the concrete class being instantiated.
@@ -237,7 +244,7 @@ constructor or function argument) solves the same problem without the global sta
 always does, and Module 2's dependency inversion principle (Module 2, §5) is exactly the tool for
 making that dependency explicit instead of hidden.
 
-## 3. Structural patterns
+## 3. :material-view-grid-outline: Structural patterns
 
 Structural patterns are about *how objects and classes are composed* into larger structures,
 without changing what those objects actually do.
@@ -420,7 +427,7 @@ print(root.size())  # 1500, computed recursively without the caller knowing abou
 Calling code just calls `.size()`; whether that's a single file or a folder containing thousands of
 files is invisible to it.
 
-## 4. Matching a problem to a pattern
+## 4. :material-target: Matching a problem to a pattern
 
 | If your problem is... | Reach for... |
 |---|---|

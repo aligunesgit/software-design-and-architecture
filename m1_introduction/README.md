@@ -11,7 +11,7 @@ Week 1
 
 ---
 
-## 1. Architecture versus design
+## 1. :material-compass-outline: Architecture versus design
 
 **Software architecture** is the set of decisions about a system's structure that are expensive to
 change later: how the system is decomposed into components, how those components communicate, and
@@ -36,7 +36,7 @@ Modules 2 through 4 stay mostly at the design scale: principles and patterns ins
 Modules 5 through 9 move to the architectural scale: how components are organized into a whole
 system.
 
-## 2. Why it matters: the cost of change
+## 2. :material-clock-fast: Why it matters: the cost of change
 
 Every system accumulates structural shortcuts under deadline pressure: a class that grew a second
 responsibility because splitting it felt like overkill at the time, a module that reaches directly
@@ -55,7 +55,7 @@ fix the later it's caught, roughly following: caught while writing < caught in c
 in testing < caught in production. Architecture is largely the discipline of catching structural
 mistakes on the left side of that curve.
 
-## 3. Quality attributes
+## 3. :material-scale-balance: Quality attributes
 
 A system's quality attributes (sometimes called the "-ilities") are the properties stakeholders
 actually care about, beyond "does it do the right thing." No architecture optimizes all of them at
@@ -77,7 +77,7 @@ Splitting a monolith into services (Module 7) improves scalability at the cost o
 complexity Module 8 exists to manage. Naming the trade-off explicitly, rather than discovering it
 by accident, is the actual skill this course builds.
 
-## 4. Stakeholders and competing concerns
+## 4. :material-account-group: Stakeholders and competing concerns
 
 An architecture rarely has one audience. A product owner cares about time-to-market and features.
 An operations team cares about availability and observability. A security team cares about attack

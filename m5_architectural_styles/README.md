@@ -10,7 +10,7 @@ Week 5
 
 ---
 
-## 1. Why architectural style is a first decision, not a detail
+## 1. :material-compass-outline: Why architectural style is a first decision, not a detail
 
 An architectural style is a reusable, named solution to the problem of how a system's components
 are decomposed and how they communicate. Choosing one is one of the most expensive decisions a
@@ -23,7 +23,7 @@ matter most for a given system, made at the cost of the quality attributes it do
 skill this module builds is matching a style to a system's actual constraints, not memorizing which
 style is fashionable.
 
-## 2. Layered architecture
+## 2. :material-layers-outline: Layered architecture
 
 A layered architecture stacks components into horizontal layers, where each layer only calls the
 layer directly below it (a presentation layer calls a business logic layer, which calls a data
@@ -43,7 +43,7 @@ below it. It costs **performance**, since every request pays the cost of passing
 layer even when a shortcut would be faster, and it can quietly turn into a "distributed monolith"
 if teams start bypassing layers under deadline pressure.
 
-## 3. Client-Server
+## 3. :material-server-network: Client-Server
 
 A client-server architecture splits a system into a server that provides a service and one or more
 clients that consume it over a network, with the server owning the shared state.
@@ -61,7 +61,7 @@ a server you control rather than on every client device. It costs **availability
 client's point of view: if the server is down, every client is down with it, unless the team
 invests separately in server redundancy.
 
-## 4. Pipe-and-Filter
+## 4. :material-pipe: Pipe-and-Filter
 
 A pipe-and-filter architecture processes data through a sequence of independent filters, each one
 transforming its input and passing the result to the next filter through a pipe.
@@ -82,7 +82,7 @@ filter with no knowledge of its neighbors can be reused in a different pipeline,
 when only one filter's output is needed, and it is a poor fit when filters need to share state or
 run in a specific non-linear order.
 
-## 5. Event-Driven architecture
+## 5. :material-lightning-bolt: Event-Driven architecture
 
 An event-driven architecture decouples components so that producers publish events without knowing
 who, if anyone, is listening, and consumers subscribe to the events they care about.
@@ -103,7 +103,7 @@ what happened for one event across every consumer that reacted to it is genuinel
 following a single call stack, and eventual consistency between consumers becomes a real design
 concern rather than a footnote.
 
-## 6. MVC (Model-View-Controller)
+## 6. :material-view-dashboard-outline: MVC (Model-View-Controller)
 
 MVC splits an application into a Model (the data and business rules), a View (the presentation of
 that data), and a Controller (which translates user input into changes to the model and choices
@@ -123,7 +123,7 @@ duplicating business logic, and it makes UI and business-logic changes largely i
 other. It costs some **simplicity** for small applications, where the ceremony of three separate
 components for what is really one small feature can be more overhead than it is worth.
 
-## 7. Microkernel / Plugin architecture
+## 7. :material-power-plug-outline: Microkernel / Plugin architecture
 
 A microkernel architecture keeps a minimal core system and pushes everything else into plugins that
 the core loads and calls through a stable interface, without the core needing to know what any
@@ -143,7 +143,7 @@ favors **extensibility**, since third parties can add capability without touchin
 **performance and reliability guarantees**: a misbehaving plugin can degrade or crash the whole
 system unless the core invests in isolating plugin failures.
 
-## 8. Comparing the styles
+## 8. :material-scale-balance: Comparing the styles
 
 | Style | Favors | Costs |
 |---|---|---|

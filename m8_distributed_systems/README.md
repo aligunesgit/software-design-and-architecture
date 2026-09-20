@@ -11,7 +11,7 @@ Week 9
 
 ---
 
-## 1. The CAP theorem
+## 1. :material-triangle-outline: The CAP theorem
 
 The moment Module 7's services are separate processes on separate machines, a network partition
 between them becomes possible: a link can drop, a machine can become unreachable, while both
@@ -31,7 +31,7 @@ Neither choice is universally correct; it is a property of what the specific dat
 system, decided deliberately, the same way Module 5 asked you to justify an architectural style
 against the quality attributes that actually matter for your system.
 
-## 2. Failure modes unique to distributed systems
+## 2. :material-alert-octagon-outline: Failure modes unique to distributed systems
 
 A single process either runs or crashes. A distributed system fails in shapes that have no
 single-process equivalent:
@@ -46,7 +46,13 @@ single-process equivalent:
 
 Every pattern in this module exists to stop one of these three failure modes from spreading.
 
-## 3. Retry
+<figure markdown>
+![xkcd: Dependency](https://imgs.xkcd.com/comics/dependency.png)
+<figcaption><a href="https://xkcd.com/2347/">xkcd #2347</a>, CC BY-NC 2.5. A cascading failure is
+exactly this diagram, except the block on the bottom is a service, not a person.</figcaption>
+</figure>
+
+## 3. :material-refresh: Retry
 
 The simplest response to a failed call is to try again, since many failures (a dropped packet, a
 momentarily overloaded service) are transient. Retrying blindly and immediately is a common
@@ -69,7 +75,7 @@ Retry only helps with the failure mode in §2 that is actually transient; retryi
 is failing because the data itself is invalid just wastes four calls to get the same permanent
 error a fifth time.
 
-## 4. Timeout
+## 4. :material-timer-sand: Timeout
 
 Retry only matters if the caller does not wait forever for the response it is retrying. Every
 network call needs an explicit timeout, exactly the `timeout=2` argument in §3's example: without
@@ -78,7 +84,7 @@ waiting, which is precisely the setup for a cascading failure. Choosing the time
 real design decision: too short, and you abandon calls that would have succeeded; too long, and
 you have not actually protected yourself from the slow-caller problem.
 
-## 5. Circuit breaker
+## 5. :material-electric-switch: Circuit breaker
 
 Retrying a call to a service that is *fully* down, not just transiently slow, just delays the
 inevitable failure while adding load to a system that is already struggling. A circuit breaker
@@ -104,7 +110,7 @@ The circuit breaker is what turns "keep retrying a dead service forever" into "g
 let the caller decide what to do instead," which is usually a fallback response, a cached value,
 or a clear error to the end user rather than a hang.
 
-## 6. Bulkhead
+## 6. :material-wall: Bulkhead
 
 Named after a ship's watertight compartments, a bulkhead isolates the resources (thread pools,
 connection pools) used to call *different* dependencies, so that one dependency's failure cannot

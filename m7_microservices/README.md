@@ -11,7 +11,7 @@ Week 8
 
 ---
 
-## 1. What decomposition buys you, and what it costs
+## 1. :material-call-split: What decomposition buys you, and what it costs
 
 A microservices architecture splits a system into multiple independently deployable services,
 each owning its own data and business logic. The appeal is real: a team can deploy their service
@@ -34,7 +34,7 @@ building a system nobody else touches rarely benefits from paying the distribute
 early. Module 8 covers the resilience patterns that pay for some of that tax; this module is about
 deciding where to pay it in the first place.
 
-## 2. Where to draw the boundary
+## 2. :material-vector-square: Where to draw the boundary
 
 The single most common mistake in adopting microservices is drawing service boundaries around
 technical layers (a "database service," a "UI service") instead of around business capabilities.
@@ -50,7 +50,7 @@ single business operation. If you find a proposed service boundary needs constan
 back and forth with another service to do anything useful, that is usually a sign the boundary
 was drawn in the wrong place: reconsider whether it should be one bounded context, not two.
 
-## 3. Designing the API at the boundary
+## 3. :material-api: Designing the API at the boundary
 
 Once a boundary is drawn, something has to define the contract other services (and other clients)
 use to talk across it. A REST API models the boundary as a set of resources, addressed by URLs,
@@ -73,7 +73,7 @@ or content-negotiation-based versioning exists too, at the cost of being less vi
 you choose, the discipline that matters is deciding *before* the first external caller shows up,
 not after.
 
-## 4. Synchronous versus asynchronous communication
+## 4. :material-sync: Synchronous versus asynchronous communication
 
 Two services can talk to each other in two fundamentally different shapes:
 
@@ -102,7 +102,7 @@ you want new services to be able to react to the same event later without A havi
 exist. The cost is that reasoning about the system now requires thinking about eventual
 consistency and message ordering, both of which have no equivalent in the synchronous case.
 
-## 5. A minimal example: two services talking over HTTP
+## 5. :material-web: A minimal example: two services talking over HTTP
 
 A tiny "orders" service, exposing one endpoint with FastAPI:
 

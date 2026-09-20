@@ -11,7 +11,7 @@ Week 10
 
 ---
 
-## 1. Why architecture needs its own documentation
+## 1. :material-file-document-outline: Why architecture needs its own documentation
 
 Code documents itself, eventually, to a reader willing to trace every call. Architecture does
 not: the reason a system has three services instead of one, or a queue between two components
@@ -22,7 +22,7 @@ now you will not remember why you chose PostgreSQL over MongoDB, only that you d
 auditing the system later, including yourself during Module 10's evaluation, needs to know which
 trade-offs were made on purpose versus which just happened.
 
-## 2. The C4 model
+## 2. :material-sitemap: The C4 model
 
 The [C4 model](https://c4model.com/) gives architecture diagrams four levels of zoom, each useful
 to a different audience, so you stop cramming a database, a load balancer, and a single class
@@ -60,7 +60,7 @@ This course has already been drawing Code-level diagrams throughout, since a mer
 sequence diagram *is* a UML diagram: the tool is the same, only the label (C4 versus plain UML)
 changes.
 
-## 3. The 4+1 view model
+## 3. :material-view-carousel-outline: The 4+1 view model
 
 The [4+1 view model](https://en.wikipedia.org/wiki/4%2B1_architectural_view_model), proposed by
 Philippe Kruchten, covers similar ground to C4 from a different angle: instead of levels of zoom,
@@ -80,7 +80,7 @@ keep on systems with real concurrency or deployment topology questions, the kind
 distributed systems content raises. Knowing the second exists means recognizing when a C4 diagram
 alone is not answering the question a stakeholder is actually asking.
 
-## 4. Architecture Decision Records
+## 4. :material-note-text-outline: Architecture Decision Records
 
 An **Architecture Decision Record (ADR)** is a short, timestamped document capturing one decision,
 written at the moment it is made, not reconstructed later. The standard format, popularized by
