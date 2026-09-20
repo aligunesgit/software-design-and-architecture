@@ -53,6 +53,10 @@ To get the most out of this course, you should have prior experience with:
 
 * **Python 3.11+**, the language every code example is written in. The patterns and principles
   themselves are language-agnostic; Python is chosen for readability in a lecture setting.
+* **Java 17+** (optional), for anyone who would rather work in a statically-typed, class-based
+  language for their exercises and project. Every pattern and principle in this course maps
+  directly onto Java; only the lecture code examples are Python. Use [Maven](https://maven.apache.org/)
+  or [Gradle](https://gradle.org/) for dependency management, whichever you already know.
 * **Mermaid**, for every architecture and sequence diagram in this course, following the [C4
   model](https://c4model.com/)'s levels of abstraction where relevant.
 * **Markdown**, for Architecture Decision Records (Module 9) and every module's own notes.
@@ -63,6 +67,7 @@ To get the most out of this course, you should have prior experience with:
 |---|---|---|
 | **Python 3.11+** | Module 1 | [python.org/downloads](https://www.python.org/downloads/) or a version manager like `pyenv` |
 | **uv** | Module 1 | [docs.astral.sh/uv](https://docs.astral.sh/uv/getting-started/installation/): this repo's dependency manager |
+| **JDK 17+** (optional, Java track) | Module 1 | [adoptium.net](https://adoptium.net/): only needed if you choose to work in Java instead of Python |
 | **Git** | Module 1 | [git-scm.com/downloads](https://git-scm.com/downloads/) |
 | **A code editor** | Module 1 | [VS Code](https://code.visualstudio.com/) is recommended; this repo ships a `.devcontainer/` |
 | **Docker Desktop** (or OrbStack on macOS) | Module 7 | [docs.docker.com/get-docker](https://docs.docker.com/get-docker/), for the microservices exercises |
