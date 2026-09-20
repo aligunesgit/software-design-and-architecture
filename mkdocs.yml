@@ -1,6 +1,6 @@
 site_name: Software Design and Architecture
 docs_dir: .
-site_dir: ../site
+site_dir: site
 repo_url: https://github.com/aligunesgit/software-design-and-architecture
 edit_uri: edit/main/
 copyright: Copyright &copy; 2026
